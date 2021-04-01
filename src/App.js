@@ -1,11 +1,10 @@
 import Feed from "./components/Feed";
 import "./App.css";
-import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Login from "./components/Login";
 import React from 'react'
 import { useStateValue } from "./components/StateProvider";
-
+import RightBar from './components/RightBar'
 
 
 function App() {
@@ -17,10 +16,10 @@ function App() {
                 <Login />
             ) : (
                 <>
-                    <Header />
                     <div className="app__body">
                         <Sidebar />
                         <Feed />
+                        <RightBar />
                     </div>
                 </>
             )}

@@ -1,11 +1,10 @@
 import React from "react";
 import { Avatar } from "@material-ui/core";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import RepeatIcon from "@material-ui/icons/Repeat";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
-import NearMeIcon from "@material-ui/icons/NearMe";
-import { ExpandMoreOutlined } from "@material-ui/icons";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import PublishIcon from "@material-ui/icons/Publish";
 import "./Post.css";
 
 function Post({ profilePic, image, username, timestamp, message }) {
@@ -26,20 +25,19 @@ function Post({ profilePic, image, username, timestamp, message }) {
         </div>
         <div className="post__options">
           <div className="post__option">
-            <ThumbUpIcon />
-            <p>Like</p>
-          </div>
-          <div className="post__option">
             <ChatBubbleOutlineIcon />
-            <p>Comment</p>
+            <p>{Math.floor(Math.random()*100)}</p>
           </div>
           <div className="post__option">
-            <NearMeIcon />
-            <p>Share</p>
+            <RepeatIcon />
+            <p>{Math.floor(Math.random()*100)}</p>
           </div>
           <div className="post__option">
-            <AccountCircleIcon />
-            <ExpandMoreOutlined />
+            <FavoriteBorderIcon />
+            <p>{Math.floor(Math.random()*100)}</p>
+          </div>
+          <div className="post__option">
+            <PublishIcon />
           </div>
         </div>
       </div>

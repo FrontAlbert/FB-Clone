@@ -7,6 +7,7 @@ import { Avatar } from "@material-ui/core";
 import { useStateValue } from "./StateProvider";
 import firebase from "firebase";
 import db from "../firebase";
+import { Button } from "@material-ui/core";
 
 function MessageSender() {
     const [{ user }, dispatch] = useStateValue();
@@ -36,12 +37,12 @@ function MessageSender() {
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         className="messageSender__input"
-                        placeholder={`What's on your mind?, ${user.displayName}`}
+                        placeholder={`Whats Happening... ${user.displayName}`}
                     />
                     <input
                         value={imageUrl}
                         onChange={(e) => setImageUrl(e.target.value)}
-                        placeholder="image URL (Optional)"
+                        placeholder="IMAGE URL"
                     />
                     <button onClick={handleSubmit} type="submit">
                         Hidden submit
@@ -51,16 +52,16 @@ function MessageSender() {
             <div className="messageSender__bottom">
                 <div className="messageSender__option">
                     <VideocamIcon style={{ color: "red" }} />
-                    <h3>Live Video</h3>
                 </div>
                 <div className="messageSender__option">
                     <PhotoLibraryIcon style={{ color: "green" }} />
-                    <h3>Photo/Video</h3>
                 </div>
                 <div className="messageSender__option">
                     <InsertEmoticonIcon style={{ color: "orange" }} />
-                    <h3>Feeling/Activity</h3>
                 </div>
+                <Button variant="outlined" className="sidebar__tweet" style={{width: "20%"}}>
+                    Tweet
+                </Button>
             </div>
         </div>
     );

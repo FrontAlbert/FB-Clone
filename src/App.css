@@ -1,5 +1,4 @@
 .app {
-    background-color: #f1f2f5;
     height: 100%;
 }
 
@@ -7,4 +6,9 @@
   margin: auto;
     max-width: 1200px;
     display: flex;
+}
+
+body {
+  --twitter-color: #50b7f5;
+  --twitter-background: #e6ecf0;
 }

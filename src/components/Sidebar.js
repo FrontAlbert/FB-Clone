@@ -1,32 +1,37 @@
 import React from "react";
 import "./Sidebar.css";
-import SidebarRow from "./SidebarRow";
-import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
-import EmojiFlagsIcon from "@material-ui/icons/EmojiFlags";
-import PeopleIcon from "@material-ui/icons/People";
-import ChatIcon from "@material-ui/icons/Chat";
-import StorefrontIcon from "@material-ui/icons/Storefront";
-import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
-import { ExpandMoreOutlined } from "@material-ui/icons";
-import { useStateValue } from "./StateProvider";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import SidebarOption from "./SidebarOption";
+import HomeIcon from "@material-ui/icons/Home";
+import SearchIcon from "@material-ui/icons/Search";
+import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
+import ListAltIcon from "@material-ui/icons/ListAlt";
+import PermIdentityIcon from "@material-ui/icons/PermIdentity";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import { Button } from "@material-ui/core";
 
 function Sidebar() {
-    const [{ user }, dispatch] = useStateValue();
-    return (
-        <div className="sidebar">
-            <SidebarRow src={user.photoURL} title={user.displayName} />
-            <SidebarRow
-                Icon={LocalHospitalIcon}
-                title="COVID-19 Information Center"
-            />
-            <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
-            <SidebarRow Icon={PeopleIcon} title="Friends" />
-            <SidebarRow Icon={ChatIcon} title="Messenger" />
-            <SidebarRow Icon={StorefrontIcon} title="Marketplace" />
-            <SidebarRow Icon={VideoLibraryIcon} title="Videos" />
-            <SidebarRow Icon={ExpandMoreOutlined} title="Marketplace" />
-        </div>
-    );
+  return (
+    <div className="sidebar">
+      <TwitterIcon className="sidebar__twitterIcon" />
+
+      <SidebarOption active Icon={HomeIcon} text="Home" />
+      <SidebarOption Icon={SearchIcon} text="Explore" />
+      <SidebarOption Icon={NotificationsNoneIcon} text="Notifications" />
+      <SidebarOption Icon={MailOutlineIcon} text="Messages" />
+      <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />
+      <SidebarOption Icon={ListAltIcon} text="Lists" />
+      <SidebarOption Icon={PermIdentityIcon} text="Profile" />
+      <SidebarOption Icon={MoreHorizIcon} text="More" />
+
+      {/* Button -> Tweet */}
+      <Button variant="outlined" className="sidebar__tweet" fullWidth>
+        Tweet
+      </Button>
+    </div>
+  );
 }
 
 export default Sidebar;

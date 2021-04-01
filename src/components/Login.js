@@ -4,10 +4,13 @@ import { auth, provider } from "../firebase";
 import { Button } from "@material-ui/core";
 import { actionTypes } from "./reducer";
 import { useStateValue } from "./StateProvider";
+import bird from '../components/bird.png'
+import logo from '../components/logo.png'
 
 function Login() {
-    const [state, dispatch] = useStateValue();
+    const [{}, dispatch] = useStateValue();
 
+    // How to Sign in (function)
     const signIn = (e) => {
         e.preventDefault();
         auth.signInWithPopup(provider)
@@ -24,11 +27,11 @@ function Login() {
         <div className="login">
             <div className="login__logo">
                 <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
+                    src={bird}
                     alt=""
                 />
                 <img
-                    src="https://www.logo.wine/a/logo/Facebook/Facebook-Logo.wine.svg"
+                    src={logo}
                     alt=""
                 />
             </div>

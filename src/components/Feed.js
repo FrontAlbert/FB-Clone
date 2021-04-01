@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Feed.css";
-import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender";
 import Post from "./Post";
-import db from '../firebase';
-
+import db from "../firebase";
 
 function Feed() {
     const [posts, setPosts] = useState([]);
@@ -25,20 +23,21 @@ function Feed() {
 
     return (
         <div className="feed">
-            <StoryReel />
+            <div className="feed__header">
+                <h2>Home</h2>
+            </div>
             <MessageSender />
 
-        {posts.map((post)=>(
-            <Post
-            key={post.data.id}
-            profilePic={post.data.profilePic}
-            message={post.data.message}
-            timestamp={post.data.timestamp}
-            username={post.data.username}
-            image={post.data.image}
-            />
-        ))}
-
+            {posts.map((post) => (
+                <Post
+                    key={post.data.id}
+                    profilePic={post.data.profilePic}
+                    message={post.data.message}
+                    timestamp={post.data.timestamp}
+                    username={post.data.username}
+                    image={post.data.image}
+                />
+            ))}
         </div>
     );
 }
